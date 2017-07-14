@@ -1,6 +1,6 @@
 {
   "name": "nodebb-widget-r6stats-vrk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "R6 Siege stats plugin",
   "main": "library.js",
   "repository": {
