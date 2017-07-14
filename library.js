@@ -21,13 +21,13 @@ var Widget = {
 };
 
 //setup cron job
-cronJobs.push(new cron('30 0 * * *', function(){
-	console.log('UPDATING R6STATS')
+cronJobs.push(new cron('15 0 * * *', function(){
+	console.log('[r6stats-vrk] - UPDATING R6STATS')
 	Widget.updateStats()
 }, null, false));
 
 Widget.init = function(params, callback) {
-  console.log('r6 init')
+  console.log('[r6stats-vrk] - r6 init')
   app = params.app;
 	reStartCronJobs()
   var templatesToLoad = [
@@ -38,7 +38,7 @@ Widget.init = function(params, callback) {
   function loadTemplate(template, next){
     fs.readFile(path.resolve(__dirname,'./public/templates/' + template), function(err,data){
       if(err){
-        console.log(err.message);
+        console.log('[r6stats-vrk] - ' + err.message);
         return next(err);
       }
       Widget.templates[template] = data.toString();
@@ -154,7 +154,7 @@ Widget.defineWidgets = function(widgets, callback) {
 Widget.updateStats = function(){
 	MongoClient.connect(url, function(err, db) {
 	  assert.equal(null, err)
-	  console.log("Connected correctly to server")
+	  console.log("[r6stats-vrk] - Connected correctly to server")
 	  getUplayIds(db, function(uplay_ids){
 	    // console.dir(uplay_ids)
 	    async.waterfall([
@@ -221,7 +221,7 @@ Widget.updateStats = function(){
 	        insertR6Stats(db, players, function(err, result){
 	          if(err){ console.error(err) }
 	          db.close()
-						console.log('R6Stats updated')
+						console.log('[r6stats-vrk] - Status updated')
 	        })
 	      })
 	  })
@@ -285,7 +285,7 @@ Widget.updateStats = function(){
 
 function reStartCronJobs() {
 	cronJobs.forEach(function(job) {
-		console.log('starting cron jobs for R6Stats')
+		console.log('[r6stats-vrk] - Starting cron jobs')
 		job.start();
 	});
 }
