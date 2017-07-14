@@ -1,0 +1,11 @@
+.op_badge {
+  max-width: 75px;
+}
+
+.op_bust {
+  max-height: 200px;
+}
+
+tr.statsToggle {
+  cursor: pointer;
+}

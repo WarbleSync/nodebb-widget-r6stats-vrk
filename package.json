@@ -1,0 +1,32 @@
+{
+  "name": "nodebb-widget-r6stats-vrk",
+  "version": "1.0.0",
+  "description": "R6 Siege stats plugin",
+  "main": "library.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WarbleSync/nodebb-widget-r6stats-vrk"
+  },
+  "keywords": [
+    "nodebb",
+    "plugin",
+    "Rainbow Six Siege",
+    "stats"
+  ],
+  "author": {
+    "name": "WarbleSync",
+    "email": "warblesync@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WarbleSync/nodebb-widget-r6stats-vrk/issues"
+  },
+  "readmeFilename": "README.md",
+  "nbbpm": {
+    "compatibility": "^1.0.0"
+  },
+  "dependencies": {
+    "mongodb": "^2.2.30",
+    "rainbowsix-api-node": "0.0.1"
+  }
+}

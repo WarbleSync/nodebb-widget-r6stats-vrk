@@ -1,0 +1,19 @@
+{
+    "id": "nodebb-widget-r6stats-vrk",
+    "name": "NodeBB R6 Siege Stats VRK",
+    "description": "R6 Siege Stats plugin for NodeBB.",
+    "url": "https://github.com/WarbleSync/nodebb-widget-r6stats-vrk.git",
+    "library": "./library.js",
+    "staticDirs": {
+        "public": "public"
+    },
+    "hooks": [
+      { "hook": "static:app.load", "method": "init" },
+      { "hook": "filter:widget.render:r6stats-vrk", "method": "renderR6StatsWidget" },
+      { "hook": "filter:widgets.getWidgets", "method": "defineWidgets" }
+    ],
+    "css": [
+    	"./public/css/style.css"
+    ],
+    "templates": "./public/templates"
+}
