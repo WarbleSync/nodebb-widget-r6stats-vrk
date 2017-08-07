@@ -95,5 +95,5 @@
     "url": "git+https://github.com/WarbleSync/nodebb-widget-r6stats-vrk.git"
   },
   "scripts": {},
-  "version": "1.0.2"
+  "version": "2.0.0"
 }
