@@ -199,7 +199,7 @@ Widget.renderR6StatsWidget = function(widget, callback) {
 								if(o.operator.name == 'Montagne'){
 									o.specials.push({value :'Bullets Blocked by Extended Shield: ' + o.stats.specials.operatorpvp_montagne_shieldblockdamage })
 								}
-								if(o.operator.name == 'Caveria'){
+								if(o.operator.name == 'Caveira'){
 									o.specials.push({value :'Interrogations: ' + o.stats.specials.operatorpvp_caveira_interrogations })
 								}
 								if(o.operator.name == 'Capitão'){
