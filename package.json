@@ -1,32 +1,99 @@
 {
-  "name": "nodebb-widget-r6stats-vrk",
-  "version": "1.0.2",
-  "description": "R6 Siege stats plugin",
-  "main": "library.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/WarbleSync/nodebb-widget-r6stats-vrk"
+  "_args": [
+    [
+      {
+        "raw": "nodebb-widget-r6stats-vrk",
+        "scope": null,
+        "escapedName": "nodebb-widget-r6stats-vrk",
+        "name": "nodebb-widget-r6stats-vrk",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "D:\\repos\\warblesync\\NodeBB"
+    ]
+  ],
+  "_from": "nodebb-widget-r6stats-vrk@latest",
+  "_id": "nodebb-widget-r6stats-vrk@1.0.2",
+  "_inCache": true,
+  "_location": "/nodebb-widget-r6stats-vrk",
+  "_nodeVersion": "6.11.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/nodebb-widget-r6stats-vrk-1.0.2.tgz_1500056575559_0.5283219937700778"
   },
+  "_npmUser": {
+    "name": "warblesync",
+    "email": "warblesync@gmail.com"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {
+    "bson": "1.0.4",
+    "es6-promise": "3.2.1",
+    "readable-stream": "2.2.7",
+    "require_optional": "1.0.1"
+  },
+  "_requested": {
+    "raw": "nodebb-widget-r6stats-vrk",
+    "scope": null,
+    "escapedName": "nodebb-widget-r6stats-vrk",
+    "name": "nodebb-widget-r6stats-vrk",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/nodebb-widget-r6stats-vrk/-/nodebb-widget-r6stats-vrk-1.0.2.tgz",
+  "_shasum": "86e85afcc2ea1da2f56fd5cb545fbb5646eff0f9",
+  "_shrinkwrap": null,
+  "_spec": "nodebb-widget-r6stats-vrk",
+  "_where": "D:\\repos\\warblesync\\NodeBB",
+  "author": {
+    "name": "WarbleSync",
+    "email": "warblesync@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/WarbleSync/nodebb-widget-r6stats-vrk/issues"
+  },
+  "dependencies": {
+    "mongodb": "^2.2.30",
+    "rainbowsix-api-node": "0.0.1"
+  },
+  "description": "R6 Siege stats plugin",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "86e85afcc2ea1da2f56fd5cb545fbb5646eff0f9",
+    "tarball": "https://registry.npmjs.org/nodebb-widget-r6stats-vrk/-/nodebb-widget-r6stats-vrk-1.0.2.tgz"
+  },
+  "gitHead": "19d6f542ca4efadb4bc32f9d7552dbcd71528137",
+  "homepage": "https://github.com/WarbleSync/nodebb-widget-r6stats-vrk#readme",
   "keywords": [
     "nodebb",
     "plugin",
     "Rainbow Six Siege",
     "stats"
   ],
-  "author": {
-    "name": "WarbleSync",
-    "email": "warblesync@gmail.com"
-  },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/WarbleSync/nodebb-widget-r6stats-vrk/issues"
-  },
-  "readmeFilename": "README.md",
+  "main": "library.js",
+  "maintainers": [
+    {
+      "name": "warblesync",
+      "email": "warblesync@gmail.com"
+    }
+  ],
+  "name": "nodebb-widget-r6stats-vrk",
   "nbbpm": {
     "compatibility": "^1.0.0"
   },
-  "dependencies": {
-    "mongodb": "^2.2.30",
-    "rainbowsix-api-node": "0.0.1"
-  }
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WarbleSync/nodebb-widget-r6stats-vrk.git"
+  },
+  "scripts": {},
+  "version": "1.0.2"
 }
