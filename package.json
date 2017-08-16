@@ -11,22 +11,46 @@
         "type": "tag"
       },
       "D:\\repos\\warblesync\\NodeBB"
+    ],
+    [
+      {
+        "raw": "nodebb-widget-r6stats-vrk",
+        "scope": null,
+        "escapedName": "nodebb-widget-r6stats-vrk",
+        "name": "nodebb-widget-r6stats-vrk",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/bwallace1231/Desktop/NodeBB"
+    ],
+    [
+      {
+        "raw": "nodebb-widget-r6stats-vrk",
+        "scope": null,
+        "escapedName": "nodebb-widget-r6stats-vrk",
+        "name": "nodebb-widget-r6stats-vrk",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "D:\\repos\\warblesync\\NodeBB"
     ]
   ],
-  "_from": "nodebb-widget-r6stats-vrk@latest",
-  "_id": "nodebb-widget-r6stats-vrk@1.0.2",
+  "_from": "nodebb-widget-r6stats-vrk",
+  "_id": "nodebb-widget-r6stats-vrk@2.0.2",
   "_inCache": true,
   "_location": "/nodebb-widget-r6stats-vrk",
-  "_nodeVersion": "6.11.0",
+  "_nodeVersion": "7.0.0",
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/nodebb-widget-r6stats-vrk-1.0.2.tgz_1500056575559_0.5283219937700778"
+    "tmp": "tmp/nodebb-widget-r6stats-vrk-2.0.2.tgz_1502827108701_0.20876183407381177"
   },
   "_npmUser": {
     "name": "warblesync",
     "email": "warblesync@gmail.com"
   },
-  "_npmVersion": "3.10.10",
+  "_npmVersion": "4.6.1",
   "_phantomChildren": {
     "bson": "1.0.4",
     "es6-promise": "3.2.1",
@@ -45,8 +69,8 @@
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "https://registry.npmjs.org/nodebb-widget-r6stats-vrk/-/nodebb-widget-r6stats-vrk-1.0.2.tgz",
-  "_shasum": "86e85afcc2ea1da2f56fd5cb545fbb5646eff0f9",
+  "_resolved": "https://registry.npmjs.org/nodebb-widget-r6stats-vrk/-/nodebb-widget-r6stats-vrk-2.0.2.tgz",
+  "_shasum": "660d0675070f1f9814c27f6ff9d7c3c97ea32e8f",
   "_shrinkwrap": null,
   "_spec": "nodebb-widget-r6stats-vrk",
   "_where": "D:\\repos\\warblesync\\NodeBB",
@@ -65,8 +89,8 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "shasum": "86e85afcc2ea1da2f56fd5cb545fbb5646eff0f9",
-    "tarball": "https://registry.npmjs.org/nodebb-widget-r6stats-vrk/-/nodebb-widget-r6stats-vrk-1.0.2.tgz"
+    "shasum": "660d0675070f1f9814c27f6ff9d7c3c97ea32e8f",
+    "tarball": "https://registry.npmjs.org/nodebb-widget-r6stats-vrk/-/nodebb-widget-r6stats-vrk-2.0.2.tgz"
   },
   "gitHead": "19d6f542ca4efadb4bc32f9d7552dbcd71528137",
   "homepage": "https://github.com/WarbleSync/nodebb-widget-r6stats-vrk#readme",
@@ -95,5 +119,5 @@
     "url": "git+https://github.com/WarbleSync/nodebb-widget-r6stats-vrk.git"
   },
   "scripts": {},
-  "version": "2.0.1"
+  "version": "2.0.2"
 }
