@@ -40,32 +40,6 @@ Widget.init = function(params, callback) {
 Widget.renderR6StatsWidget = function(widget, callback) {
   var lookup_keys = []
   var players = []
-
-	function getAttacker(player){
-		player.operator_records.forEach(function(op){
-			if(op.operator.role == 'atk'){
-				if(!player.hasOwnProperty('fav_atk')){
-					player.fav_atk = op
-				}
-				if(player.fav_atk.stats.played < op.stats.played){
-					player.fav_atk = op
-				}
-			}
-		})
-	}
-
-	function getDefender(player){
-		player.operator_records.forEach(function(op){
-			if(op.operator.role == 'def'){
-				if(!player.hasOwnProperty('fav_def')){
-					player.fav_def = op
-				}
-				if(player.fav_def.stats.played < op.stats.played){
-					player.fav_def = op
-				}
-			}
-		})
-	}
   async.waterfall([
     function(callback){
 			db.getSortedSetRangeWithScores('username:uid',0,-1,function(err,res){
@@ -214,17 +188,6 @@ Widget.renderR6StatsWidget = function(widget, callback) {
 				callback()
 			})
 		},
-		// function(callback){
-		// 	async.each(players,
-		// 		function(player, cb){
-		// 			getAttacker(player)
-		// 			getDefender(player)
-		// 			cb()
-		// 		},
-		// 		function(err){
-		// 			callback()
-		// 		})
-		// },
 		function(callback){
 			async.each(players,function(player,cb){
 				async.sortBy(player.operator_records,function(ops,callback){
@@ -239,19 +202,33 @@ Widget.renderR6StatsWidget = function(widget, callback) {
 			})
 		},
 		function(callback){
-			async.sortBy(players,
-				function(player,callback){
-					callback(null, player.stats.casual.kd * -1)
-				},
-				function(err,result){
-					players = result
-					callback()
-				})
+			if(widget.data.ranked){
+				async.sortBy(players,
+					function(player,callback){
+						callback(null, player.stats.ranked.kd * -1)
+					},
+					function(err,result){
+						players = result
+						callback()
+					})
+			}
+			else{
+				async.sortBy(players,
+					function(player,callback){
+						callback(null, player.stats.casual.kd * -1)
+					},
+					function(err,result){
+						players = result
+						callback()
+					})
+			}
+
 		}
   ],function(err,result){
 		// console.log(players)
 		var rep = {
-			'players': players
+			'players': players,
+			'ranked' : widget.data.ranked === 'on' ? true : false
 		};
 
 	  var pre = ""+fs.readFileSync(path.resolve(__dirname,'./public/templates/r6siege.tpl'));

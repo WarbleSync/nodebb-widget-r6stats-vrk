@@ -35,9 +35,16 @@
         <div class="col-md-2">
           <p>{players.stats.progression.level}</p>
         </div>
+        <!-- IF ranked -->
+        <div class="col-md-2"><p>{players.stats.ranked.kd}</p></div>
+        <div class="col-md-2"><p>{players.stats.ranked.wlr}</p></div>
+        <div class="col-md-3"><p>{players.playtime}</p></div>
+        <!-- ENDIF ranked -->
+        <!-- IF !ranked -->
         <div class="col-md-2"><p>{players.stats.casual.kd}</p></div>
         <div class="col-md-2"><p>{players.stats.casual.wlr}</p></div>
         <div class="col-md-3"><p>{players.playtime}</p></div>
+        <!-- ENDIF !ranked -->
       </div>
       <div class="container-fluid well" style="display:none;">
         <div class="row">
