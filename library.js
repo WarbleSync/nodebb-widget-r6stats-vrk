@@ -3,7 +3,7 @@
 var async =  module.parent.require('async'),
 fs = require('fs'),
 path = require('path'),
-templates = module.parent.require('templates.js'),
+templates = require('benchpressjs'),
 db = require.main.require('./src/database'),
 util = require("util"),
 players = [],
@@ -47,13 +47,16 @@ Widget.renderR6StatsWidget = function(widget, callback) {
 				results.forEach(function(u){
 					lookup_keys.push('user:' + u.score + ':r6stats')
 				})
+				console.log('lookup_keys',lookup_keys);
 				callback()
 			})
     },
 		function(callback){
 			db.getObjects(lookup_keys,function(err, results){
+				// console.log('users', results);
 				results.forEach(function(u){
-					if(typeof u !== 'undefined'){
+					console.log('is null? ',u === null);
+					if(typeof u !== 'undefined' && u !== null){
 						if(u.stats.casual.playtime  >= 3600 || u.stats.ranked.playtime >= 3600){
 							if(widget.data.ranked){
 								u.playtime = Math.floor(u.stats.ranked.playtime / 3600 ) + ' h ' + Math.floor((u.stats.ranked.playtime % 3600) / 60) + ' m'
@@ -179,6 +182,24 @@ Widget.renderR6StatsWidget = function(widget, callback) {
 								if(o.operator.name == 'Capitão'){
 									o.specials.push({value :'Lethal Dart Kills: ' + o.stats.specials.operatorpvp_capitao_lethaldartkills })
 								}
+								if(o.operator.name == 'Lesion'){
+									o.specials.push({value: 'Caltrops Affected: ' + o.stats.specials.operatorpvp_caltrop_enemy_affected})
+								}
+								if(o.operator.name === 'Vigil'){
+									o.specials.push({value: 'Video Feeds Altered: ' + o.stats.specials.operatorpvp_attackerdrone_diminishedrealitymode})
+								}
+								if(o.operator.name === 'Ela'){
+									o.specials.push({value: 'Concussion Mines Detonated: ' + o.stats.specials.operatorpvp_concussionmine_detonate})
+								}
+								if(o.operator.name === 'Dokkaebi'){
+									o.specials.push({value: 'Phones Hacked: ' + o.stats.specials.operatorpvp_phoneshacked})
+								}
+								if(o.operator.name === 'Zofia'){
+									o.specials.push({value: 'Concussion Grenades Detontated: ' + o.stats.specials.operatorpvp_concussiongrenade_detonate})
+								}
+								if(o.operator.name === 'Ying'){
+									o.specials.push({value: 'Dazzler Gadgets Detonated: ' + o.stats.specials.operatorpvp_dazzler_gadget_detonate})
+								}
 							})
 							players.push(u)
 						}
@@ -231,10 +252,19 @@ Widget.renderR6StatsWidget = function(widget, callback) {
 			'ranked' : widget.data.ranked === 'on' ? true : false
 		};
 
-	  var pre = ""+fs.readFileSync(path.resolve(__dirname,'./public/templates/r6siege.tpl'));
-		widget.html = templates.parse(pre, rep)
+	  var pre = ""+ fs.readFileSync(path.resolve(__dirname,'./public/templates/r6siege.tpl'));
+		templates.compileRender(pre, rep)
+		.then(html => {
+			console.log(html);
+			widget.html = html;
+			callback(null, widget);
+		}).
+		catch(err => {
+			console.log(err);
+			callback(err);
+		});
 		// callback(null, templates.parse(pre, rep));
-		callback(null, widget);
+
   })
 };
 
