@@ -55,7 +55,7 @@ Widget.renderR6StatsWidget = function(widget, callback) {
 			db.getObjects(lookup_keys,function(err, results){
 				// console.log('users', results);
 				results.forEach(function(u){
-					console.log('is null? ',u === null);
+					// console.log('is null? ',u === null);
 					if(typeof u !== 'undefined' && u !== null){
 						if(u.stats.casual.playtime  >= 3600 || u.stats.ranked.playtime >= 3600){
 							if(widget.data.ranked){
