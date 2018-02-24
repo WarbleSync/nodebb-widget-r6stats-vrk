@@ -57,7 +57,7 @@ Widget.renderR6StatsWidget = function(widget, callback) {
 				results.forEach(function(u){
 					// console.log('is null? ',u === null);
 					if(typeof u !== 'undefined' && u !== null){
-						if(u.stats.casual.playtime  >= 3600 || u.stats.ranked.playtime >= 3600){
+						if(u.stats.casual.playtime  >= 36000 || u.stats.ranked.playtime >= 36000){
 							if(widget.data.ranked){
 								u.playtime = Math.floor(u.stats.ranked.playtime / 3600 ) + ' h ' + Math.floor((u.stats.ranked.playtime % 3600) / 60) + ' m'
 							}
