@@ -201,7 +201,12 @@ Widget.renderR6StatsWidget = function(widget, callback) {
 									o.specials.push({value: 'Dazzler Gadgets Detonated: ' + o.stats.specials.operatorpvp_dazzler_gadget_detonate})
 								}
 							})
-							players.push(u)
+							if(widget.data.ranked && u.stats.ranked.playtime >= 36000){
+								players.push(u)
+							}
+							else{
+								players.push(u)
+							}
 						}
 					}
 
